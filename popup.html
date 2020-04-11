@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-size: 0.95em;
+      }
+
+      span {
+        position: relative;
+        margin-left: -4.9em;
+        left: 4.9em;
+        display: inline;
+      }
+
+      input[type="checkbox"] + span {
+        margin-left: -6.3em;
+        left: 6.3em;
+      }
+
+      div.main {
+        position: relative;
+        margin-right: 4.9em;
+      }
+
+      div.checkboxes {
+        position: relative;
+        margin-right: 1em;
+      }
+
+      div.button {
+        text-align: center;
+      }
+
+      input[name="exclude"] + span {
+        font-size: 0.9em;
+      }
+
+      input[disabled] + span {
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      Scope:
+      &nbsp;<input type="radio" name="window" id="true" checked><span> Organize current window</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="window" id="false"><span> Organize all windows</span><br>
+      <div class="checkboxes">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="min" name="exclude" disabled checked><span> Exclude minimized windows</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="max" name="exclude" disabled checked><span> Exclude maximized windows</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="full" name="exclude" disabled checked><span> Exclude fullscreen windows</span><br>
+      </div>
+      <br>
+      Action:
+      &nbsp;<input type="radio" name="merge" id="Z" checked><span> Sort tabs within each window</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="merge" id="N"><span> Move tabs from the same website to a new window, if there are more than
+        <select id="maxN" disabled>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+        tab(s) from that website</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="merge" id="P" disabled><span> Merge tabs from all windows to the current window</span><br>
+    </div>
+    <br>
+    <br>
+    <div class="button">
+      <input type="button" value="Organize My Tabs">
+    </div>
+
+    <script type="text/javascript" src="popup.js"></script>
+  </body>
+</html>
