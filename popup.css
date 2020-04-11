@@ -1,0 +1,44 @@
+body {
+  font-size: 0.95em;
+  margin-left: 1em;
+  margin-right: 0.7em;
+  margin-top: 1em;
+  width: 325px;
+  height: 270px;
+  background-color: rgb(236, 236, 236);
+}
+
+span {
+  position: relative;
+  margin-left: -4.9em;
+  left: 4.9em;
+  display: inline;
+}
+
+input[type="checkbox"] + span {
+  margin-left: -6.3em;
+  left: 6.3em;
+}
+
+div.main {
+  position: relative;
+  margin-right: 4.9em;
+}
+
+div.checkboxes {
+  position: relative;
+  margin-right: 1em;
+}
+
+div.button {
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+input[name="exclude"] + span {
+  font-size: 0.9em;
+}
+
+input[disabled] + span {
+  color: gray;
+}

@@ -1,4 +1,3 @@
-let currentWin = false;
 let excludeMinimized = true;
 let excludeMaximized = true;
 let excludeFullscreen = true;
@@ -17,9 +16,43 @@ let mergeN = document.querySelector("#N");
 let mergeP = document.querySelector("#P");
 let maxN = document.querySelector("#maxN");
 
+excludeMin.checked = excludeMinimized;
+excludeMax.checked = excludeMaximized;
+excludeFull.checked = excludeFullscreen;
+
+maxN.value = `${maxForDomain}`;
+
+if (currentOnly) {
+  currentWinRadio.checked = true;
+  mergeP.setAttribute("disabled", "");
+  for (checkBox of excludeCheckBoxes) {
+    checkBox.setAttribute("disabled", "");
+  }
+} else {
+  allWinRadio.checked = true;
+  mergeP.removeAttribute("disabled");
+  for (checkBox of excludeCheckBoxes) {
+    checkBox.removeAttribute("disabled");
+  }
+}
+
+switch (mergeMode) {
+  case -1:
+    mergeN.checked = true;
+    maxN.removeAttribute("disabled");
+    break;
+  case 1:
+    mergeP.checked = true;
+    maxN.setAttribute("disabled", "");
+    break;
+  default:
+    mergeZ.checked = true;
+    maxN.setAttribute("disabled", "");
+}
+
 currentWinRadio.addEventListener("input",() => {
   if (currentWinRadio.checked) {
-    currentWin = true;
+    currentOnly = true;
     for (checkBox of excludeCheckBoxes) {
       checkBox.setAttribute("disabled", "");
     }
@@ -31,7 +64,7 @@ currentWinRadio.addEventListener("input",() => {
     }
   } else {
     for (checkBox of excludeCheckBoxes) {
-      currentWin = false;
+      currentOnly = false;
       checkBox.removeAttribute("disabled");
     }
     mergeP.removeAttribute("disabled");
@@ -40,7 +73,7 @@ currentWinRadio.addEventListener("input",() => {
 
 allWinRadio.addEventListener("input",() => {
   if (!allWinRadio.checked) {
-    currentWin = true;
+    currentOnly = true;
     for (checkBox of excludeCheckBoxes) {
       checkBox.setAttribute("disabled", "");
     }
@@ -51,7 +84,7 @@ allWinRadio.addEventListener("input",() => {
       mergeZ.checked = true;
     }
   } else {
-    currentWin = false;
+    currentOnly = false;
     for (checkBox of excludeCheckBoxes) {
       checkBox.removeAttribute("disabled");
     }
