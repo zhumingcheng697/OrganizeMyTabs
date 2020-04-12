@@ -6,32 +6,65 @@
 
   <body>
     <div class="main">
-      Scope:
-      &nbsp;<input type="radio" name="window" id="true"><span> Organize current window</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="window" id="false"><span> Organize all windows</span><br>
-      <div class="checkboxes">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="min" name="exclude"><span> Exclude minimized windows</span><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="max" name="exclude"><span> Exclude maximized windows</span><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="full" name="exclude"><span> Exclude fullscreen windows</span><br>
+      <div class="container">
+        Scope:&nbsp;&nbsp;
+        <div class="selects">
+          <div class="container">
+            <input type="radio" name="window" id="true">&nbsp;
+            <div> Organize current window</div><br>
+          </div>
+          <div class="container">
+            <input type="radio" name="window" id="false">&nbsp;
+            <div> Organize all windows
+              &nbsp;&nbsp;<div class="checkboxes">
+                <div class="container">
+                  <input type="checkbox" id="min" name="exclude">&nbsp;
+                  <div> Exclude minimized windows</div><br>
+                </div>
+                <div class="container">
+                  <input type="checkbox" id="max" name="exclude">&nbsp;
+                  <div> Exclude maximized windows</div><br>
+                </div>
+                <div class="container">
+                  <input type="checkbox" id="full" name="exclude">&nbsp;
+                  <div> Exclude fullscreen windows</div><br>
+                </div>
+              </div>
+            </div><br>
+          </div>
+        </div>
       </div>
-      <br>
-      Action:
-      &nbsp;<input type="radio" name="merge" id="Z"><span> Sort tabs within each window</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="merge" id="N"><span> Move tabs from the same website to a new window, if there are more than
-        <select id="maxN">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-        tab(s) from that website</span><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="merge" id="P"><span> Merge tabs from all windows to the current window</span><br>
+
+      <div class="container">
+        Action:&nbsp;&nbsp;
+        <div class="selects">
+          <div class="container">
+            <input type="radio" name="merge" id="Z">&nbsp;
+            <div> Sort tabs within each window</div><br>
+          </div>
+          <div class="container">
+            <input type="radio" name="merge" id="N">&nbsp;
+            <div> Move tabs from the same website to a new window, if there are more than
+              <select id="maxN">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+              tab(s) from that website</div><br>
+          </div>
+          <div class="container">
+            <input type="radio" name="merge" id="P">&nbsp;
+            <div> Merge tabs from all windows to the current window</div><br>
+          </div>
+        </div>
+      </div>
     </div>
-    <br>
+
     <div class="button">
-      <input type="button" value="Organize My Tabs">
+      <input type="button" id="organize" value="Organize My Tabs">
     </div>
 
     <script type="text/javascript" src="popup.js"></script>

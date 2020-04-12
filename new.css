@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(248, 249, 250);
+}
+
+div.url {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4em;
+  margin: auto;
+}
