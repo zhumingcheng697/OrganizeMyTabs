@@ -5,10 +5,6 @@ let excludeFullscreen = true;
 let maxForDomain = 3;
 let mergeMode = 0;
 
-chrome.storage.local.get("excludeMinimized", result => {
-  console.log('Value currently is ' + !result.excludeMinimized)
-});
-
 let currentWinRadio = document.querySelector("#true");
 let allWinRadio = document.querySelector("#false");
 let excludeMin = document.querySelector("#min");

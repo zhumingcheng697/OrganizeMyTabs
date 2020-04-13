@@ -1,7 +1,6 @@
 let tabGroups = [];
 let tabWindows = [];
 let winIds = [];
-let newHtmlIds = [];
 let currentWin;
 let currentOnly;
 let excludeMinimized;
@@ -211,9 +210,7 @@ function moveTabs() {
         chrome.storage.local.set({"newWindows": newWins}, () => {
           chrome.tabs.query({windowId: newWin.id, index: 0}, blanks => {
             chrome.tabs.remove(blanks[0].id, () => {
-                chrome.tabs.create({windowId: newWin.id, index: 0, url: "new.html"}, newHTML => {
-                  newHtmlIds.push(newHTML.id);
-                });
+                chrome.tabs.create({windowId: newWin.id, index: 0, url: "new.html"});
             });
           });
         });
@@ -223,12 +220,15 @@ function moveTabs() {
 }
 
 function organize() {
-  
-  chrome.tabs.remove(newHtmlIds, () => {
+
+  chrome.tabs.query({url: "chrome-extension://*/new.html"}, tabs => {
+    tabs.forEach(tab => {
+      chrome.tabs.remove(tab.id)
+    });
+
     tabGroups = [];
     tabWindows = [];
     winIds = [];
-    newHtmlIds = [];
 
     chrome.windows.getCurrent({}, win => currentWin = win);
 
