@@ -7,6 +7,10 @@ body {
   background-color: rgb(236, 236, 236);
 }
 
+span, label {
+  color: black;
+}
+
 div.container {
   display: flex;
   flex-direction: row;
@@ -30,7 +34,7 @@ div.checkboxes div.container:first-of-type {
 
 div.button {
   margin-top: 0.9em;
-  margin-bottom: 1.6em;
+  margin-bottom: 1.8em;
   text-align: center;
 }
 
@@ -48,6 +52,21 @@ input[name="exclude"] + div {
   font-size: 0.9em;
 }
 
-input[disabled] + div {
-  color: gray;
+input[disabled] + div label {
+  color: rgb(170, 170, 170);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color: rgb(48, 53, 59);
+  }
+
+  span, label {
+    color: white;
+  }
+
+  input[disabled] + div > label {
+    color: rgb(95, 105, 110);
+  }
 }
