@@ -222,6 +222,8 @@ function moveTabs() {
 function organize() {
 
   chrome.tabs.query({url: "chrome-extension://*/new.html"}, tabs => {
+    chrome.storage.local.remove("newWindows");
+
     tabs.forEach(tab => {
       chrome.tabs.remove(tab.id)
     });

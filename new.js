@@ -5,8 +5,11 @@ chrome.storage.local.get("newWindows", result => {
         if (win.id === newWindow.winId) {
           document.querySelector("h1").innerHTML = newWindow.key;
           document.title = newWindow.key;
+          return;
         }
       }
     });
   }
+  document.querySelector("h1").innerHTML = "OrganizeMyTabs";
+  document.title = "OrganizeMyTabs";
 });
