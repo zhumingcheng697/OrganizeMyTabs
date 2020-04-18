@@ -168,7 +168,7 @@ function sortTabsWithinGroup(group) {
 function combineLonelyTabs() {
   let lonelyTabs = [];
   for (group of tabGroups) {
-    if (group.tabs.length > maxForDomain) {
+    if (group.tabs.length >= maxForDomain) {
       tabWindows.push({newKey: group.key, tabs: group.tabs});
     } else {
       lonelyTabs = lonelyTabs.concat(group.tabs);
