@@ -30,9 +30,8 @@ function getHost(url) {
 }
 
 function selectWindows() {
-  if (currentOnly) {
-    chrome.windows.getCurrent({}, win => winIds.push(win.id));
-  } else {
+  chrome.windows.getCurrent({}, win => winIds.push(win.id));
+  if (!currentOnly) {
     chrome.windows.getAll({}, wins => {
       for (win of wins) {
         switch (win.state) {
