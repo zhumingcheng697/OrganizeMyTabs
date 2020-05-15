@@ -1,8 +1,10 @@
 # OrganizeMyTabs
 
-https://github.com/zhumingcheng697/OrganizeMyTabs/releases
-
 A Chrome Extension that Organizes Your Chrome Tabs for You
+
+## Download link:
+
+https://github.com/zhumingcheng697/OrganizeMyTabs/releases
 
 ## How to load this extension into your Chrome browser:
 
